@@ -1,0 +1,206 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 2em;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Post page */
+.container {
+  width: 100%; /* Or 100vw for viewport width */
+  display: flex;
+  flex-wrap: wrap; /* Allows posts to wrap to the next line */
+  justify-content: center; /* Centers the posts horizontally */
+  box-sizing: border-box; /* Includes padding in width */
+  margin: 0;
+  padding: 20px; /* Adjust spacing as needed */
+  gap: 2em;
+  cursor: pointer;
+}
+
+.post {
+  border: 1px solid #444;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  height: 22em;
+  max-width: 20em;
+  background-color: #1a1a1a;
+  position: relative; /* position: relative makes .post the reference */
+}
+
+.post-title {
+  font-size: 1.5em;
+  margin: 0 0 0.5em 0;
+}
+
+.post-body {
+  margin: 0 0 0.5em 0;
+  font-style: normal;
+  word-spacing: 0.15em;
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* number of lines, only works if the element is a -webkit-box. */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-views {
+  position: absolute; /* ensures same visual level*/
+  bottom: 1em;
+  right: 1em;
+  color: #cf1a1a;
+  font-size: 0.9em;
+}
+
+.hover-top-left {
+  animation: flipInTopLeft 0.5s ease-in-out forwards;
+}
+
+.hover-bottom-right {
+  animation: flipInBottomRight 0.5s ease-in-out forwards;
+}
+
+@keyframes flipInTopLeft {
+  0% {
+    transform: rotateY(90deg) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInBottomRight {
+  0% {
+    transform: rotateY(-90deg) rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* Post Details page */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.post-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+.post-details h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+.post-details p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+.post-meta {
+  margin-top: 1.5em;
+  font-size: 0.9em;
+  color: #888;
+  display: flex;
+  gap: 0.4em;
+}
+.post-tags {
+  display: flex;
+  gap: 0.5em;
+  color: #646cff;
+}
+
+/* Post Create */
+.post-create {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+input {
+  padding: 0.8em;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+textarea {
+  padding: 0.8em;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 150px;
+}
