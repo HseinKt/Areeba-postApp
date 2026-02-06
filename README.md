@@ -1,5 +1,15 @@
 # React + TypeScript + Vite
 
+## Tasks:
+  
+**Step 1:** Define `Post` types   
+**Step 2:** Build Posts List Page   
+**Step 3:** Build Post Details Page  
+**Step 4:** Error & loading states  
+**Step 5:** Auth pages (Login/Register)
+**Step 6:** Redux integration
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
