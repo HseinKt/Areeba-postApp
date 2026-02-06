@@ -57,8 +57,12 @@ const PostsList = () => {
             <div className="header">
                 <h1>Posts</h1>
                 <button onClick={() => Navigate('/create')}>Create Post</button>
-                <button onClick={() => Navigate('/login')}>Login</button>
+                <div>
+                    <button onClick={() => Navigate('/login')}>Login</button>
+                    <button onClick={() => Navigate('/register')}>Register</button>
+                </div>
             </div>
+            
             
             {error && <p className="error">{error}</p>}
 
