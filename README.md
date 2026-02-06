@@ -6,7 +6,7 @@
 **Step 2:** Build Posts List Page   
 **Step 3:** Build Post Details Page  
 **Step 4:** Error & loading states  
-**Step 5:** Auth pages (Login/Register)
+**Step 5:** Auth pages (Login/Register)  
 **Step 6:** Redux integration
 
 
