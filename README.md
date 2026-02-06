@@ -9,6 +9,9 @@
 **Step 5:** Auth pages (Login/Register)  
 **Step 6:** Redux integration
 
+API: https://dummyjson.com/docs
+
+---
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
