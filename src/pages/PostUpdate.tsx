@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-// import type { Post } from "../types/post";
 import { updatePost } from "../api/posts.api";
 
 const PostUpdate = () => {
-    // const [editingPostId, setEditingPostId] = useState<number | null>(null);
     const [editTitle, setEditTitle] = useState("");
     const [editBody, setEditBody] = useState("");
     const { id } = useParams<{ id: string }>();
-
-    // const startEditingPost = (post: Post) => {
-    //     setEditingPostId(post.id);
-    //     setEditTitle(post.title);
-    //     setEditBody(post.body);
-    // }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,7 +17,6 @@ const PostUpdate = () => {
             alert("Post updated successfully");
         } catch (error) {
             console.log("Failed to update post: ", error);
-            
         }
     }
     return ( 

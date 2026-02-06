@@ -3,6 +3,7 @@ import PostsList from "./pages/PostsList"
 import PostDetails from "./pages/PostDetails"
 import PostCreate from "./pages/PostCreate"
 import PostUpdate from "./pages/PostUpdate"
+import Login from "./pages/Login"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/posts/:id" element={<PostDetails />} />
         <Route path="/create" element={<PostCreate />} />
         <Route path="/update/:id" element={<PostUpdate />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   )
