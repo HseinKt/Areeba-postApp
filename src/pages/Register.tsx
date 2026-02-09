@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { register } from "../api/auth.api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
 
@@ -22,7 +22,7 @@ const Register = () => {
             const body = {username: userName, email: email, password: password};
             const response = await register(body);
             console.log("Register successful:", response.data);
-            Navigate('/');
+            Navigate('/login');
         } catch (error) {
             console.log("Register error:", error);
         }
@@ -50,6 +50,9 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <button type="submit">Register</button>
+            <p>
+                Already have an account? <Link to="/login">Login</Link>
+            </p>
         </form>
      );
 }

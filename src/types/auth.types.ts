@@ -22,3 +22,10 @@ export interface RegisterResponse {
     username: string,
     email: string,
 }
+
+export interface AuthContextType {
+    user: AuthUser | null,
+    token: string,
+    login: (user:AuthUser) => void,
+    logout: () => void,
+}
