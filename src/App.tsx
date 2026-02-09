@@ -5,19 +5,22 @@ import PostCreate from "./pages/PostCreate"
 import PostUpdate from "./pages/PostUpdate"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import { AuthProvider } from "./context/AuthContext"
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PostsList />} />
-        <Route path="/posts/:id" element={<PostDetails />} />
-        <Route path="/create" element={<PostCreate />} />
-        <Route path="/update/:id" element={<PostUpdate />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<PostsList />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/create" element={<PostCreate />} />
+          <Route path="/update/:id" element={<PostUpdate />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }

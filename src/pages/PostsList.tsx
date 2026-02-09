@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import type { Post } from "../types/post";
 import { getPosts } from "../api/posts.api";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContextStore";
+// import { AuthContext } from "../context/AuthContextStore";
 
 const PostsList = () => {
 
     const [posts, setPosts] = useState<Post[]>([]); // State to hold posts data 
     const [error, setError] = useState<string | null>(null); // State to hold error message
     const Navigate = useNavigate();
+
+    const authContext = useContext(AuthContext);
+    const logout = authContext?.logout;
 
     useEffect(() => {
         // Fetch posts data from API when component mounts (run only once on mount)
@@ -59,6 +64,9 @@ const PostsList = () => {
                 <button onClick={() => Navigate('/create')}>Create Post</button>
                 <div>
                     <button onClick={() => Navigate('/login')}>Login</button>
+                    <button onClick={() => {
+                        logout?.();
+                    }}>logout</button>
                     <button onClick={() => Navigate('/register')}>Register</button>
                 </div>
             </div>
