@@ -3,7 +3,6 @@ import type { Post } from "../types/post";
 import { getPosts } from "../api/posts.api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextStore";
-// import { AuthContext } from "../context/AuthContextStore";
 
 const PostsList = () => {
 
@@ -38,8 +37,6 @@ const PostsList = () => {
         const rect = target.getBoundingClientRect(); // Get element's position relative to viewport
         const x = e.clientX - rect.left; // X coordinate within the element.
         const y = e.clientY - rect.top;  // Y coordinate within the element.
-
-        // console.log("coordinates: ", rect.left);
         
         const isTopLeft = x < rect.width / 2 && y < rect.height / 2;
 
@@ -63,14 +60,15 @@ const PostsList = () => {
                 <h1>Posts</h1>
                 <button onClick={() => Navigate('/create')}>Create Post</button>
                 <div>
-                    <button onClick={() => Navigate('/login')}>Login</button>
+                    <button onClick={() => Navigate('/login') }>
+                        Login
+                    </button>
                     <button onClick={() => {
                         logout?.();
                     }}>logout</button>
                     <button onClick={() => Navigate('/register')}>Register</button>
                 </div>
             </div>
-            
             
             {error && <p className="error">{error}</p>}
 

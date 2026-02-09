@@ -1,13 +1,11 @@
 import { useContext, useState } from "react";
 import { loginapi } from "../api/auth.api";
-// import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextStore";
 
 const Login = () => {
-
+    
     const [userName, setUserName] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    // const Navigate = useNavigate();
 
     const authContext = useContext(AuthContext);
 
@@ -24,19 +22,15 @@ const Login = () => {
             alert("Username and password are required");
             return;
         }
-
-        console.log("Login attempt with:", { userName, password });
         
         try {
             const body = {username: userName, password: password};
             const response = await loginapi(body);
 
-            console.log("Login successful:", response.data);
             alert("Login successful");
-            // localStorage.setItem("token", response.data.accessToken);
 
             login(response.data);
-            // Navigate('/');
+
         } catch (error) {
             console.log("Login error:", error);
         }
