@@ -3,6 +3,7 @@ import type { Post } from "../types/post";
 import { getPosts } from "../api/posts.api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContextStore";
+import Counter from "../features/counter/counter";
 
 const PostsList = () => {
 
@@ -70,6 +71,8 @@ const PostsList = () => {
                 </div>
             </div>
             
+            <Counter />
+
             {error && <p className="error">{error}</p>}
 
             <div className="container">

@@ -5,16 +5,12 @@ import PostCreate from "./pages/PostCreate"
 import PostUpdate from "./pages/PostUpdate"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import { Provider } from "react-redux"
 // import { AuthProvider } from "./context/AuthContext"
-import store from "./redux/store.tsx";
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Provider store={store}>
-
         {/* <AuthProvider> */}
         <Routes>
           <Route path="/" element={<PostsList />} />
@@ -25,7 +21,6 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
         {/* </AuthProvider> */}
-      </Provider>
     </BrowserRouter>
   )
 }
