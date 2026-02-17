@@ -6,7 +6,7 @@ import PostUpdate from "./pages/PostUpdate"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Test from "./pages/Test"
-import Utility_Types from "./pages/Utility_Types"
+
 // import { AuthProvider } from "./context/AuthContext"
 
 function App() {
@@ -15,8 +15,7 @@ function App() {
     <BrowserRouter>
         {/* <AuthProvider> */}
         <Routes>
-          <Route path="/" element={<Utility_Types/>}/>
-          <Route path="/test" element={<Test/>}/>
+          <Route path="/" element={<Test/>}/>
           <Route path="/home" element={<PostsList />} />
           <Route path="/posts/:id" element={<PostDetails />} />
           <Route path="/create" element={<PostCreate />} />

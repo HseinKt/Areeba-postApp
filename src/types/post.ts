@@ -11,7 +11,7 @@ export interface Post {
   views: number;
 }
 
-export interface PostsResponse {
+export interface PostsResponse  extends StrictPost{  // Note that an interface can extend a type
   posts: Post[];
   total: number;
   skip: number;
@@ -29,3 +29,9 @@ export type PostWithoutUserId = Omit<Post, "userId">
 type Role = "admin" | "user" | "guest";  
 
 export type ExcluseRole = Exclude<Role, "admin"> // You can prevent unsafe roles from reaching certain logic.
+
+
+// Generic Constraint test:
+export function getId<T extends {id: string | number}>(obj: T) {
+  return obj.id;
+};

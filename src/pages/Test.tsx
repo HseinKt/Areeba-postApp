@@ -1,3 +1,5 @@
+import { getId, type PartialPost } from "../types/post";
+
 const Test = () => {
     
     const response = 
@@ -29,11 +31,29 @@ const Test = () => {
         else 
             console.log("Number " + value);
     }
+
+    const handleClick = () => {
+
+        const post: PartialPost = {
+            id: 2222,
+            title: "Hello",
+            body: "test Generic constraint",
+        };
+
+          // Fix: Ensure 'id' is not possibly undefined for getId (which expects {id: number})
+        if (post.id !== undefined) {
+            const postId = getId(post as { id: number } );
+            console.log(postId); // "2222"
+        } else {
+            console.error("Post id is undefined");
+        }
           
-      
+    }
+
     return (
         <div>
             <button onClick={() => print("dd2")}>Click</button>
+            <button onClick={handleClick}>getId</button>
         </div>
     )
 }

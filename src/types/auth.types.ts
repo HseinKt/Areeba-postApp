@@ -29,3 +29,10 @@ export interface AuthContextType {
     login: (user:AuthUser) => void,
     logout: () => void,
 }
+
+export interface Apiresponse<T> {
+    // Generic API Response
+    User: T,
+    error?: string,
+}
+
