@@ -4,10 +4,10 @@ import { IsString, MaxLength } from 'class-validator';
 export class CreatePostDto {
   @IsString()
   @MaxLength(200)
-  title?: string;
+  title!: string;
 
   @IsString()
-  content?: string;
+  content!: string;
 }
 
-export class updatePostDto extends PartialType(CreatePostDto) {}
+export class UpdatePostDto extends PartialType(CreatePostDto) {}

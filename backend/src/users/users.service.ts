@@ -5,7 +5,6 @@ import {
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from '../../prisma/prisma.service';
-import { randomBytes } from 'crypto';
 
 type User = {
   id: number;
@@ -22,7 +21,7 @@ type CreateUserInput = {
 
 type UpdateUserInput = Partial<CreateUserInput>;
 
-const SALT_ROUNDS = randomBytes(10).toString('hex');
+const SALT_ROUNDS = 10;
 
 @Injectable()
 export class UsersService {
